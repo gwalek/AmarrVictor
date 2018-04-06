@@ -47,6 +47,8 @@ if ($scriptdir != "") {
 #  that reaches outside the directory where this script resides.
 $pos = strpos($absdir,$scriptdir);
 
+echo "$pos:" + $pos;
+
 if ($pos !== 0) {
    echo "<b>ERROR</b>: An invalid directory (<b>$dir</b>) was entered.";
    exit();
