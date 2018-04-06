@@ -1,3 +1,23 @@
+<!--
+Directory Index Script 
+(Salmun Kazerounian, Jon Rifkin - 2004)
+
+This script allows the user to view the contents
+of the script directory and those below.
+
+Input:  Current directory *relative* to script directory.
+        The directory is checked to insure that it
+        is *really* under the parent directory, thus
+        the user cannot manipulate the directory display
+        by including ".." in the input.
+Output: List of current directory contents with links
+        to files and links to this script with arguments
+        to view subdirectories.
+
+HISTORY
+2006-08-31 - Add SHOW_DOT=0 show files which start with '.' are not shown.
+-->
+
 
 <?php
 #  Set to 1 to show files whose names start with '.'
@@ -51,9 +71,6 @@ if ($pos !== 0) {
    echo "<b>ERROR</b>: An invalid directory (<b>$dir</b>) was entered.";
    exit();
 }
-
-echo "<br>";
-echo "<br>";
 
 #  Get clean reldir (need for file and directory URLs)
 $reldir = substr($absdir,strlen($scriptdir));
